@@ -12,6 +12,35 @@
             background: #f0f8ff;
         }
 
+        .navbar-left a {
+    position: relative;
+}
+
+/* Tooltip styling */
+.navbar-left a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px; /* position below link */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #004d4d;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.navbar-left a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+
         .comment-box {
             max-width: 600px;
             margin: auto;
@@ -746,11 +775,11 @@
     <!-- Navigation Menu -->
     <div class="navbar">
         <div class="navbar-left">
-            <a href="#">Home</a>
-            <a href="#">Apps</a>
-            <a href="#">Games</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
+            <a href="#" data-tooltip="Pages coming soon, please be patient">Home</a>
+            <a href="#" data-tooltip="Pages coming soon, please be patient">Apps</a>
+            <a href="#" data-tooltip="Pages coming soon, please be patient">Games</a>
+            <a href="#" data-tooltip="Pages coming soon, please be patient">Contact</a>
+            <a href="#" data-tooltip="Pages coming soon, please be patient">About</a>
         </div>
         <button id="darkModeToggle" class="dark-mode-btn"
             style="background-color: #000000; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; font-size: 16px; border-radius: 5px; margin-left: 20px;">
@@ -1497,5 +1526,6 @@ window.addEventListener("scroll", () => {
 
 
 </html>
+
 
 
